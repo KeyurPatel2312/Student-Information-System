@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>Student Information System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Ewert' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Alfa Slab One' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+        h1, h2{
+            text-align: center;
+            text-transform: uppercase;
+            font-style: italic;
+            font-size: 2.5em;  /* 40px/16=2.5em */
+            font-family: "Ewert";
+        }
+        .leg{
+            font-family: "Alfa Slab One";
+        }
+        #field {
+        margin-bottom:20px;
+        }
+    </style>
+</head>
+    <body>
+        <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Student Information System</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+        <div class="container">
+    <form name="addem" class="form-horizontal" action="info.php" method="post">
+        <label>College Student Id:<font color="red"><sup>*</sup></font>
+        <input type="text" class="form-control" name="s_id" placeholder="Enter Your Id" size="35" pattern="[0-9]{2}[A-Z]{3}[0-9]{3}" required><br><br></label>
+        <center><h2>Other Personal Information:</h2></center>
+        <div class="field_wrapper">
+        <fieldset>
+            <legend class="leg">Scholarship Details</legend><br>
+            <label>Have any Scholarship?<font color="red"><sup>*</sup></font></label><input type="radio" name="exam" value="Y" onclick="document.getElementById('on').disabled = false; document.getElementById('off').disabled = true;">Yes<input type="radio" name="exam" value="N"  onclick="document.getElementById('on').disabled = true; document.getElementById('off').disabled = false;">No<br><br>
+            <fieldset id="on">
+                <label>Scholarship Name:<font color="red"><sup>*</sup></font>&nbsp;&nbsp;&nbsp;<input type="text" class="form-control" id="on" name="sname[]" required></label><br>
+            <label>Date when scholarship got:<font color="red"><sup>*</sup></font>&nbsp;&nbsp;&nbsp;<input type="date" class="form-control" id="on" name="schdate" required></label><br>
+                <label>Type of Scholarship:<font color="red"><sup>*</sup></font>&nbsp;&nbsp;&nbsp;</label>
+                <select name="type">
+                    <option value="">select from following</option>
+                <option value="State Government">State Government</option>
+                <option value="National Government">National Government</option>
+                    <option value="Private Organization">Private Organization</option>
+                <option value="Institute Level">Institute Level</option>    
+                </select>
+                <br>
+                <label>Benefits got(in Rupees)<font color="red"><sup>*</sup></font>:</label>&nbsp;&nbsp;&nbsp;<input type="text" class="form-control" id="on" name="benefit" required><br>
+                <label>Scholarship based on<font color="red"><sup>*</sup></font>:&nbsp;&nbsp;&nbsp;</label>
+                <select name="basedon">
+                    <option value="">select from following</option>
+                <option value="Merit">Merit</option>
+                    <optgroup label="Category">
+                    <option value="SEBC">SEBC</option>
+                    <option value="SC">SC</option>
+                    <option value="ST">ST</option>
+                    <option value="OBC">OBC</option>
+                </optgroup>
+                </select><br>
+                    <label>Scholarship Letter(for proof):<font color="red"><sup>*</sup></font></label>&nbsp;&nbsp;&nbsp;<input type="file" name="schletter" accept="application/pdf"><input type="submit" name="pupload" value="upload">
+        </fieldset>
+        </fieldset>
+        </div>
+        <br><br>
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+            </form>
+        </div>
+    </body>
+</html>
